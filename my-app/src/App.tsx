@@ -7,7 +7,7 @@ import './App.css';
 2. let age; number;
 3.let isStudent : boolean;
 4.let hobbies: string[];
-5.let role: [number, string] "tuple is a type of ts which contains a fixed amount of value  and types that are defined during declaration" */
+5.let role: [number, string] "tuple is a type of ts which contains a fixed amount of value  and types that are defined during declaration" 
 
 type People ={
   name: string;
@@ -21,6 +21,26 @@ let person : People= {
 
 let age : number | string; // union method combines both types 
 age = "two";
+
+type X ={//types
+  a:string;
+  b:number;
+}
+type Y = X &{
+  c:string;
+  d:number;
+}
+let y:Y & X = {
+  a:"hasc",
+  b:5,
+  c:"hjdf",
+  d:4,
+}
+
+interface Person { // interface  
+  name:string;
+  age:number;
+}*/
 
 function printName(name:string){// defining a function
   console.log(name);
