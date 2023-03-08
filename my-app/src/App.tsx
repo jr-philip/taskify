@@ -19,6 +19,9 @@ let person : People= {
   age: 25,
 }
 
+let age : number | string; // union method combines both types 
+age = "two";
+
 function App() {
   return <div className="App">Hello world</div>;
 }
