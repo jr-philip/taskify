@@ -40,17 +40,21 @@ let y:Y & X = {
 interface Person { // interface  
   name:string;
   age:number;
-}*/
+}
 
 function printName(name:string){// defining a function
   console.log(name);
 }
 printName("phil")
 
-let personName: unknown;// if i dont have a clue what value is going to be returned , use "UNKNOWN"
+let personName: unknown;// if i dont have a clue what value is going to be returned , use "UNKNOWN"*/
 
-function App() {
-  return <div className="App">Hello world</div>;
-}
+const App = () => {
+  return (
+    <div className="App">
+      <span className="heading">TASKIFY</span>
+    </div>
+  );
+};
 
 export default App;
