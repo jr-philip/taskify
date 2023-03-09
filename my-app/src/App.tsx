@@ -1,6 +1,18 @@
 import React from 'react';
 import './App.css';
 
+
+const App: React.FC = () => {
+  return (
+    <div className="App">
+      <span className="heading">Taskify</span>
+    </div>
+  );
+};
+
+export default App;
+
+
 // types of typescript
 /* 
 1. let name: string;
@@ -48,13 +60,3 @@ function printName(name:string){// defining a function
 printName("phil")
 
 let personName: unknown;// if i dont have a clue what value is going to be returned , use "UNKNOWN"*/
-
-const App = () => {
-  return (
-    <div className="App">
-      <span className="heading">TASKIFY</span>
-    </div>
-  );
-};
-
-export default App;
