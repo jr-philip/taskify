@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './style.css';
 
 const InputField = () => {
   return <form className='input'>
