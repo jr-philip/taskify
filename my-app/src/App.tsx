@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { updateExpressionStatement } from 'typescript';
 import './App.css';
 import InputField from './components/InputField';
 import { Todo } from './components/model';
@@ -11,12 +10,14 @@ const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("")//creating the state of todo and setTodo
   const [todos, setTodos] = useState<Todo[]>([])
 
+  const handleAdd = () => {};
+
   console.log(todo)
 
   return (
     <div className="App">
       <span className="heading">TASKIFY</span>
-      <InputField todo={todo} setTodo={setTodo}/> 
+      <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd}/> 
     </div>
   );
 };

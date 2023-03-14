@@ -4,6 +4,7 @@ import './style.css';
 interface Props{
     todo: string;
     setTodo: React.Dispatch<React.SetStateAction<string>>;//coz setTodo is function,i'll hover on in App.tsx and then copy &paste the value provided
+    handleAdd:() => void;
 }
 
 const InputField = ({ todo, setTodo }: Props) => { // or const InputField:React.FC<Props>
