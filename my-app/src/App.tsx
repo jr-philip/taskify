@@ -8,7 +8,6 @@ import InputField from './components/InputField';
 const App: React.FC = () => {
 
   const [todo, setTodo] = useState<string>("")//creating the state of todo and setTodo
-
   console.log(todo)
 
   return (
