@@ -7,7 +7,7 @@ interface Props{
     handleAdd:() => void;
 }
 
-const InputField = ({ todo, setTodo }: Props) => { // or const InputField:React.FC<Props>
+const InputField = ({ todo, setTodo } :Props) => { // or const InputField:React.FC<Props>
   return <form className='input'>
             <input 
                 type="input" 
