@@ -4,11 +4,11 @@ import './style.css';
 interface Props{
     todo: string;
     setTodo: React.Dispatch<React.SetStateAction<string>>;//coz setTodo is function,i'll hover on in App.tsx and then copy &paste the value provided
-    handleAdd:() => void;
+    handleAdd:() => void;//must define the function.(void) will not return anything
 }
 
-const InputField = ({ todo, setTodo } :Props) => { // or const InputField:React.FC<Props>
-  return <form className='input'>
+const InputField = ({ todo, setTodo, handleAdd } :Props) => { // or const InputField:React.FC<Props>
+  return <form className='input' onSubmit={handleAdd}>
             <input 
                 type="input" 
                 value={todo}
@@ -16,7 +16,9 @@ const InputField = ({ todo, setTodo } :Props) => { // or const InputField:React.
                 placeholder='Enter a task' 
                 className='input_box' 
             /> 
-            <button className='input_submit' type='submit'>Go</button>
+            <button className='input_submit' type='submit'>
+                Go
+            </button>
         </form>
 };
 
