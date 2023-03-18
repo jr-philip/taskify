@@ -8,9 +8,11 @@ import { Todo } from './components/model';
 const App: React.FC = () => {
 
   const [todo, setTodo] = useState<string>("")//creating the state of todo and setTodo
-  const [todos, setTodos] = useState<Todo[]>([])
+  const [todos, setTodos] = useState<Todo[]>([])//these is how you create an array of a type or interface
 
-  const handleAdd = () => {};
+  const handleAdd = (e:React.FormEvent) => {
+    e.preventDefault();
+  };
 
   console.log(todo)
 
