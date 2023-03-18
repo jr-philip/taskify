@@ -10,11 +10,16 @@ const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("")//creating the state of todo and setTodo
   const [todos, setTodos] = useState<Todo[]>([])//these is how you create an array of a type or interface
 
-  const handleAdd = (e:React.FormEvent) => {
+  const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if(todo){// check and see what is the todo
+      setTodos([...todos, {id:Date.now(), todo, isDone:false}])// date.now() will gennerate random id
+      setTodo("")//setTodo will be set to empty string so as to empty the input field
+    }
   };
 
-  console.log(todo)
+  console.log(todos )
 
   return (
     <div className="App">
