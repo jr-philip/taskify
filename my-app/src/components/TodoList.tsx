@@ -19,4 +19,4 @@ const TodoList :React.FC<Props> = ({ todos, setTodos }: Props) => {
   );
 };
 
-export default TodoList
+export default TodoList;
