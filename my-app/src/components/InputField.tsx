@@ -8,7 +8,7 @@ interface Props{
 }
 
 const InputField = ({ todo, setTodo, handleAdd } :Props) => { // or const InputField:React.FC<Props>
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);// HTMLInputElemement is the type of the useRef
 
   return (
         <form 
