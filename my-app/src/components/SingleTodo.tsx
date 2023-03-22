@@ -3,6 +3,7 @@ import { Todo } from '../model';
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
 import  "./style.css";
+import TodoList from './TodoList';
 
 
 type Props = {
@@ -12,10 +13,25 @@ type Props = {
 }
 
 const SingleTodo = ({ todo, todos, setTodos } :Props) => {
+
+
+  const handleDone = (id:number) => { // receive the id which type will be number
+    setTodos(todos.map((todo) => todo.id === id? {...todo, isDone: !todo.isDone} : todo))
+  }// "s" is called the strike tag which clears and unclears info when clicked
+
   return <form className='todos_single'>
-    <span className='todos_single--text'>
-      {todo.todo}
-    </span>
+    {
+      todo.isDone ? (
+        <s className='todos_single--text'>
+          {todo.todo}
+        </s>
+      ): (
+          <span className='todos_single--text'>
+            {todo.todo}
+          </span>
+      )
+    }
+   
     <div>
       <span className='icon'>
         <AiFillEdit />
@@ -23,7 +39,7 @@ const SingleTodo = ({ todo, todos, setTodos } :Props) => {
       <span className='icon'>
         <AiFillDelete />
       </span>
-      <span className='icon'>
+      <span className='icon' onClick={() => handleDone(todo.id)}>
         <MdDone/>
       </span>
     </div>
