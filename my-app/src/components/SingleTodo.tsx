@@ -19,6 +19,10 @@ const SingleTodo = ({ todo, todos, setTodos } :Props) => {
     setTodos(todos.map((todo) => todo.id === id? {...todo, isDone: !todo.isDone} : todo))// map through the array and whatever id matches with id, change it to false and vice verse
   }/*if todo .id is strictly = the id? that we are sending then will take that todo and change the isDone property and invert todo.isDone otherwise return todo
     "s" is called the strike tag which clears and unclears info when clicked*/
+  
+  const handleDelete = (id:number) => {
+    setTodos(todos.filter((todo) => todo.id ! == id));
+  }
 
   return <form className='todos_single'>
     {
@@ -37,7 +41,7 @@ const SingleTodo = ({ todo, todos, setTodos } :Props) => {
       <span className='icon'>
         <AiFillEdit />
       </span>
-      <span className='icon'>
+      <span className='icon' onClick={() => handleDelete(todo.id)}>
         <AiFillDelete />
       </span>
       <span className='icon' onClick={() => handleDone(todo.id)}>
