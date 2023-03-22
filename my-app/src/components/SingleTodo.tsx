@@ -26,9 +26,9 @@ const SingleTodo = ({ todo, todos, setTodos } :Props) => {
   }
 
   return <form className='todos_single'>
-      {
-        edit ? (
-          <input/>
+      
+       { edit ? (
+          <input value={editTodo}/>
         ): 
       todo.isDone ? (
         <s className='todos_single--text'>
