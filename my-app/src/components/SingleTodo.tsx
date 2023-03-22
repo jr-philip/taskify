@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Todo } from '../model';
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
@@ -13,7 +13,8 @@ type Props = {
 }
 
 const SingleTodo = ({ todo, todos, setTodos } :Props) => {
-
+  const [edit, setEdit] = useState<boolean>(false);
+  const [editTodo, setEditTodo] = useState<string>(todo.todo)
 
   const handleDone = (id:number) => { // receive the id which type will be number
     setTodos(todos.map((todo) => todo.id === id? {...todo, isDone: !todo.isDone} : todo))// map through the array and whatever id matches with id, change it to false and vice verse
