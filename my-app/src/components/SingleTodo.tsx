@@ -26,7 +26,10 @@ const SingleTodo = ({ todo, todos, setTodos } :Props) => {
   }
 
   return <form className='todos_single'>
-    {
+      {
+        edit ? (
+          <input/>
+        ): 
       todo.isDone ? (
         <s className='todos_single--text'>
           {todo.todo}
@@ -35,11 +38,15 @@ const SingleTodo = ({ todo, todos, setTodos } :Props) => {
           <span className='todos_single--text'>
             {todo.todo}
           </span>
-      )
-    }
+      )}
+    
    
     <div>
-      <span className='icon'>
+      <span className='icon' onClick={()=>{
+        if(edit && !todo.isDone){
+          setEdit(!edit)
+        }
+      }}>
         <AiFillEdit />
       </span>
       <span className='icon' onClick={() => handleDelete(todo.id)}>
