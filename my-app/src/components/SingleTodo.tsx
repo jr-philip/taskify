@@ -16,8 +16,9 @@ const SingleTodo = ({ todo, todos, setTodos } :Props) => {
 
 
   const handleDone = (id:number) => { // receive the id which type will be number
-    setTodos(todos.map((todo) => todo.id === id? {...todo, isDone: !todo.isDone} : todo))
-  }// "s" is called the strike tag which clears and unclears info when clicked
+    setTodos(todos.map((todo) => todo.id === id? {...todo, isDone: !todo.isDone} : todo))// map through the array and whatever id matches with id, change it to false and vice verse
+  }/*if todo .id is strictly = the id? that we are sending then will take that todo and change the isDone property and invert todo.isDone otherwise return todo
+    "s" is called the strike tag which clears and unclears info when clicked*/
 
   return <form className='todos_single'>
     {
