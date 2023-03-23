@@ -25,7 +25,8 @@ const SingleTodo = ({ todo, todos, setTodos } :Props) => {
     setTodos(todos.filter((todo) => todo.id ! == id));
   }
 
-  return <form className='todos_single'>
+  return (
+    <form className='todos_single'>
       
        { edit ? (
           <input value={editTodo}/>
@@ -42,8 +43,10 @@ const SingleTodo = ({ todo, todos, setTodos } :Props) => {
     
    
     <div>
-      <span className='icon' onClick={()=>{
-        if(edit && !todo.isDone){
+      <span 
+        className='icon' 
+        onClick={()=>{
+          if(!edit && !todo.isDone){
           setEdit(!edit)
         }
       }}>
@@ -58,6 +61,7 @@ const SingleTodo = ({ todo, todos, setTodos } :Props) => {
     </div>
 
   </form>
+  )
   
 }
 
