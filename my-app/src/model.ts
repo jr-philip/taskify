@@ -3,7 +3,7 @@ export interface Todo {
     todo: string;
     isDone: boolean;
 }
-
+/*
 type Action =
     | { type: "add"; payload: string}
     | { type: "remove"; payload: number}
@@ -20,4 +20,4 @@ const ReducerExample = () => {
         return(
         <div/>
      )
-}
+}*/
