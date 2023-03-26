@@ -77,7 +77,6 @@ const SingleTodo = ({ todo, todos, setTodos } :Props) => {
 
   </form>
   )
-  
 }
 
 export default SingleTodo
