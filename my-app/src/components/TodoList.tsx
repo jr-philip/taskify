@@ -27,7 +27,7 @@ const TodoList :React.FC<Props> = ({ todos, setTodos }: Props) => {
       </div>
       <div className='todos remove'>
         <span className='todos_heading'>
-          Active Tasks
+          Completed Tasks
         </span>
         {
           todos.map((todo) => (
@@ -38,7 +38,6 @@ const TodoList :React.FC<Props> = ({ todos, setTodos }: Props) => {
               setTodos={setTodos} />
           ))
         }
-
       </div>
     </div>
   );
