@@ -3,14 +3,12 @@ import './App.css';
 import InputField from './components/InputField';
 import { Todo } from './model';
 import TodoList from './components/TodoList';
-
-
-
+import { } from 'react-beautiful-dnd';
 
 const App: React.FC = () => {
-
   const [todo, setTodo] = useState<string>("")//creating the state of todo and setTodo
   const [todos, setTodos] = useState<Todo[]>([])//these is how you create an array of a type or interface
+  const [completedTodos,setCompletedTodos ] = useState<Todo[]>([])
 
   const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,15 +22,16 @@ const App: React.FC = () => {
   console.log(todos )
 
   return (
-    <div className="App">
-      <span className="heading">TASKIFY</span>
-      <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd}/> 
-      <TodoList todos={todos} setTodos={setTodos} />
-      {todos.map((t) => (
-        <li>{t.todo}</li>
-      ))}
-    </div>
-
+    <DragDropContext>
+      <div className="App">
+        <span className="heading">TASKIFY</span>
+        <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+        <TodoList todos={todos} setTodos={setTodos}
+          completedTodos={completedTodos}
+          setCompletedTodos={setCompletedTodos}
+        />
+      </div>
+    </DragDropContext>
   );
 };
 
