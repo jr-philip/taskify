@@ -28,15 +28,17 @@ const TodoList :React.FC<Props> = ({
                 Active Tasks
               </span>
               {
-                todos.map((todo) => (
+                todos.map((todo, index) => (
                   <SingleTodo
                     index={index}
                     todo={todo}
                     todos={todos}
                     key={todo.id}
                     setTodos={setTodos} />
-                ))
-              }
+                ))}
+            {provided.placeholder}
+
+                
             </div>
           )
         }
@@ -52,14 +54,16 @@ const TodoList :React.FC<Props> = ({
               Completed Tasks
             </span>
             {
-              completedTodos.map((todo) => (
+              completedTodos.map((todo, index) => (
                 <SingleTodo
+                  index={index}
                   todo={todo}
                   todos={completedTodos}
                   key={todo.id}
                   setTodos={setCompletedTodos} />
-              ))
-            }
+              ))}
+            
+            {provided.placeholder}
           </div>
         )
 
