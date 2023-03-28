@@ -21,13 +21,20 @@ const App: React.FC = () => {
   };
 
  const onDragEnd = (result:DropResult) => {
-  const {source, destination} = result;
-    if(!destination) return
+   const { destination, source } = result;
+    console.log(result)
 
-    if(destination.droppableId === source.droppableId && 
+    if(!destination) {
+      return
+    }
+
+    if(
+      destination.droppableId === source.droppableId && 
       destination.index === source.index
-      )
+      ){
        return
+      }
+
     let add,
         active = todos,
         complete = completedTodos;
@@ -40,10 +47,10 @@ const App: React.FC = () => {
       complete.splice(source.index, 1)
     }
 
-   if (source.droppableId === 'TodoList') {
-     active.splice(destination.index, 0, add)
+   if (destination.droppableId === 'TodoList') {
+     active.splice(destination.index, 0, {...add, isDone:false})
    } else {
-     complete.splice(source.index, 0, add)
+     complete.splice(source.index, 0, { ...add, isDone: true })
    }
 
    setCompletedTodos(complete)
