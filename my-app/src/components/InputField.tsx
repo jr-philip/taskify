@@ -7,7 +7,7 @@ interface Props{
     handleAdd: (e:React.FormEvent) => void;//must define the function.(void) will not return anything
 }
 
-const InputField = ({ todo, setTodo, handleAdd } :Props) => { // or const InputField:React.FC<Props>
+const InputField :React.FC <Props>= ({ todo, setTodo, handleAdd } ) => { // or const InputField:React.FC<Props>
   const inputRef = useRef<HTMLInputElement>(null);// HTMLInputElemement is the type of the useRef
 
   return (
