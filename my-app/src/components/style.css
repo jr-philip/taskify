@@ -61,8 +61,21 @@
     background-color: rgb(50, 195, 205);
 }
 
+.dragactive{
+    background-color: rgb(0, 221, 236);
+}
+
+.dragcomplete{
+    background-color: rgb(225, 38, 0);
+}
+
+.remove{
+    background-color: rgb(235, 103, 80);
+}
+
 .todos_heading{
     font-size: 30px;
+     /*text-align: center; */
     color: white;
 }
 
@@ -73,6 +86,10 @@
     margin-top: 15px;
     background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
     transition: 0.2s;
+}
+
+.drag{
+    box-shadow: 0 0 20px black ;
 }
 
 .todos_single:hover{
@@ -107,28 +124,15 @@
     .input {
         width: 95%;
     }
-    .todos{
-        width: 95%;
-        margin-bottom: 10px;
-    }
     .container{
         width: 95%;
         flex-direction: column;
     }
+    .todos{
+        width: 95%;
+        margin-bottom: 10px;
+    }
 }
 
-.remove{
-    background-color: rgb(235, 103, 80);
-}
 
-.dragactive{
-    background-color: rgb(0, 221, 236);
-}
 
-.dragcomplete{
-    background-color: rgb(225, 38, 0);
-}
-
-.drag{
-    box-shadow: 0 0 20px black ;
-}
